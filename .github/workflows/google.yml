@@ -18,12 +18,9 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GAR_LOCATION: us-central1 # TODO: update region of the Artifact Registry
-  GKE_CLUSTER: cluster-1    # TODO: update to cluster name
-  GKE_ZONE: us-central1-c   # TODO: update to cluster zone
-  DEPLOYMENT_NAME: gke-test # TODO: update to deployment name
-  REPOSITORY: samples # TODO: update to Artifact Registry docker repository
-  IMAGE: static-site
+  GKE_CLUSTER: autopilot-cluster-1    # cluster name
+  GKE_ZONE: us-central1               # cluster zone
+  DEPLOYMENT_NAME: rpl-ingress        # deployment name
 
 jobs:
   setup-build-publish-deploy:
@@ -41,13 +38,13 @@ jobs:
 
 
     # Alternative option - authentication via credentials json
-     - id: 'auth'
-       uses: 'google-github-actions/auth@v0'
-       with:
-         credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v0'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
         # replacing the image name in the k8s template
-        kubectl apply -f -
+        kubectl apply -f ./kubernetes/ingress.yml
