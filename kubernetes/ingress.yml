@@ -8,7 +8,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /user-service(/|$)(.*)
+          - path: /users-service(/|$)(.*)
             pathType: Prefix
             backend:
               service:
