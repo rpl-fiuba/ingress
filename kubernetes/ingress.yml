@@ -9,7 +9,7 @@ spec:
     - http:
         paths:
           - path: /users-service(/|$)(.*)
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: users-service
