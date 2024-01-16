@@ -35,7 +35,7 @@ spec:
               service:
                 name: courses-service
                 port:
-                  number: 80
+                  name: courses-service
           - path: /exercises-service/*
             pathType: ImplementationSpecific
             backend:
