@@ -15,3 +15,10 @@ spec:
                 name: users-service
                 port:
                   number: 80
+          - path: /users-service
+            pathType: Prefix
+            backend:
+              service:
+                name: users-service
+                port:
+                  number: 80
