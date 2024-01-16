@@ -28,7 +28,7 @@ spec:
               service:
                 name: courses-service
                 port:
-                  number: 80
+                  name: courses-service
           - path: /courses-service
             pathType: Prefix
             backend:
