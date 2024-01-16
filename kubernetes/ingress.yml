@@ -8,13 +8,6 @@ spec:
   rules:
     - http:
         paths:
-          - path: /users-service/*
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: users-service
-                port:
-                  number: 80
           - path: /users-service
             pathType: Prefix
             backend:
@@ -22,13 +15,6 @@ spec:
                 name: users-service
                 port:
                   number: 80
-          - path: /courses-service/*
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: courses-service
-                port:
-                  name: courses-service
           - path: /courses-service
             pathType: Prefix
             backend:
@@ -36,25 +22,11 @@ spec:
                 name: courses-service
                 port:
                   name: courses-service
-          - path: /exercises-service/*
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: exercises-service
-                port:
-                  number: 80
           - path: /exercises-service
             pathType: Prefix
             backend:
               service:
                 name: exercises-service
-                port:
-                  number: 80
-          - path: /math-learning-frontend/*
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: math-learning-frontend
                 port:
                   number: 80
           - path: /math-learning-frontend
