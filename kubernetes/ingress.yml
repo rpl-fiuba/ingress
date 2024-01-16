@@ -64,3 +64,4 @@ spec:
                 name: math-learning-frontend
                 port:
                   number: 80
+
