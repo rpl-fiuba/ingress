@@ -22,3 +22,45 @@ spec:
                 name: users-service
                 port:
                   number: 80
+          - path: /courses-service/*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: courses-service
+                port:
+                  number: 80
+          - path: /courses-service
+            pathType: Prefix
+            backend:
+              service:
+                name: courses-service
+                port:
+                  number: 80
+          - path: /exercises-service/*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: exercises-service
+                port:
+                  number: 80
+          - path: /exercises-service
+            pathType: Prefix
+            backend:
+              service:
+                name: exercises-service
+                port:
+                  number: 80
+          - path: /math-learning-frontend/*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: math-learning-frontend
+                port:
+                  number: 80
+          - path: /math-learning-frontend
+            pathType: Prefix
+            backend:
+              service:
+                name: math-learning-frontend
+                port:
+                  number: 80
