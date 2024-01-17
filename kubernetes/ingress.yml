@@ -3,7 +3,8 @@ kind: Ingress
 metadata:
   name: fiuba-rpl-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-uri: "true"
 spec:
   rules:
     - http:
