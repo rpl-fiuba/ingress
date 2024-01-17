@@ -29,7 +29,7 @@ spec:
                 name: exercises-service
                 port:
                   number: 80
-          - path: /math-learning-frontend
+          - path: /math-learning-frontend/*
             pathType: Prefix
             backend:
               service:
