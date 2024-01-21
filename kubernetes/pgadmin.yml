@@ -17,8 +17,10 @@ spec:
           imagePullPolicy: Always
           name: pgadmin
           env:
-            - name: ENV_VAR_1
-              value: ENV_VAR_1_VALUE
+            - name: PGADMIN_DEFAULT_EMAIL
+              value: rpl.fiuba@gmail.com
+            - name: PGADMIN_DEFAULT_PASSWORD
+              value: defaultpassword
 
 ---
 apiVersion: v1
