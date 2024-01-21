@@ -43,3 +43,24 @@ spec:
                 name: math-solver
                 port:
                   number: 80
+          - path: /users-db
+            pathType: Prefix
+            backend:
+              service:
+                name: users-db
+                port:
+                  number: 80
+          - path: /courses-db
+            pathType: Prefix
+            backend:
+              service:
+                name: courses-db
+                port:
+                  number: 80
+          - path: /exercises-db
+            pathType: Prefix
+            backend:
+              service:
+                name: exercises-db
+                port:
+                  number: 80
