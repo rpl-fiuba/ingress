@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "34.171.140.155.nip.io"
+    - host: "35.188.32.30.nip.io"
       http:
         paths:
           - path: /users-service(/|$)(.*)
