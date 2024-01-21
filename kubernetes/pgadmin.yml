@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgadmin
+  template:
+    metadata:
+      labels:
+        app: pgadmin
+    spec:
+      containers:
+        - image: dpage/pgadmin4
+          imagePullPolicy: Always
+          name: pgadmin
+          env:
+            - name: ENV_VAR_1
+              value: ENV_VAR_1_VALUE
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pgadmin
+spec:
+  type: ClusterIP
+  ports:
+    - name: "pgadmin-http"
+      port: 80
+      targetPort: 80
+    - name: "pgadmin-https"
+      port: 443
+      targetPort: 443
+  selector:
+    app: pgadmin
