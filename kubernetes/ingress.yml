@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: fiuba-rpl-ingress
+  annotations:
+    networking.gke.io/managed-certificates: learning-net-ar
 spec:
   rules:
     - http:
