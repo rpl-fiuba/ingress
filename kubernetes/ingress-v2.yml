@@ -48,3 +48,10 @@ spec:
                 name: math-solver
                 port:
                   number: 80
+          - path: /pgadmin(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: pgadmin
+                port:
+                  number: 80
