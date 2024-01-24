@@ -50,6 +50,11 @@ jobs:
         cluster_name: ${{ env.GKE_CLUSTER }}
         location: ${{ env.GKE_ZONE }}
 
+      # Deploy the Ingress to the GKE cluster
+    - name: Deploy Ingress
+      run:
+        kubectl apply -f ./kubernetes/ingress.yml
+
     # Deploy the pgadmin service to the GKE cluster
     - name: Deploy Ingress V2
       run:
