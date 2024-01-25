@@ -55,3 +55,7 @@ spec:
                 name: pgadmin
                 port:
                   number: 80
+  tls:
+    - hosts:
+        - "learning.net.ar"
+      secretName: learning-certificate-tls-test
