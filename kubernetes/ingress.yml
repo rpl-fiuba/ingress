@@ -8,8 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "learning.net.ar"
-      http:
+    - http:
         paths:
           - path: /*
             pathType: ImplementationSpecific
