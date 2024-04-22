@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: ingress-resource-v2-db
 spec:
-  ingressClassName: nginx
   rules:
     - http:
         paths:
