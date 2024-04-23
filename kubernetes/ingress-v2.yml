@@ -34,18 +34,18 @@ spec:
                 name: exercises-service
                 port:
                   number: 80
-          - path: /math-learning-frontend(/|$)(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: math-learning-frontend
-                port:
-                  number: 80
           - path: /math-solver(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: math-solver
+                port:
+                  number: 80
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: math-learning-frontend
                 port:
                   number: 80
   tls:
