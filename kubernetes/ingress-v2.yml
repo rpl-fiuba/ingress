@@ -41,6 +41,13 @@ spec:
                 name: math-solver
                 port:
                   number: 80
+          - path: /math-learning-frontend(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: math-learning-frontend
+                port:
+                  number: 80
           - path: /*
             pathType: ImplementationSpecific
             backend:
