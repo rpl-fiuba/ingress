@@ -16,6 +16,24 @@ spec:
         - image: dpage/pgadmin4
           imagePullPolicy: Always
           name: pgadmin
+          readinessProbe:
+            httpGet:
+              path: /misc/ping
+              port: 80
+            initialDelaySeconds: 100
+            failureThreshold: 5
+            successThreshold: 1
+            timeoutSeconds: 60
+            periodSeconds: 60
+          livenessProbe:
+            httpGet:
+              path: /misc/ping
+              port: 80
+            initialDelaySeconds: 300
+            failureThreshold: 5
+            successThreshold: 1
+            timeoutSeconds: 60
+            periodSeconds: 60
           env:
             - name: PGADMIN_DEFAULT_EMAIL
               value: rpl.fiuba@gmail.com
