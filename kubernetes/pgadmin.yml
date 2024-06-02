@@ -56,3 +56,4 @@ spec:
       targetPort: 443
   selector:
     app: pgadmin
+
