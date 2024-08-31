@@ -59,4 +59,3 @@ spec:
     - hosts:
         - "learning.net.ar"
       secretName: learning-certificate-tls-test
-
